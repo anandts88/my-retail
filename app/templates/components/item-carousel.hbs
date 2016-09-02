@@ -1,0 +1,49 @@
+{{! Image section}}
+<section class="col-xs-12 carosel-col">
+  <figure>
+    <img src={{current.image}} class="img-responsive"/>
+  </figure>
+</section>
+
+
+{{! View Large icon}}
+{{#if viewlarger}}
+  <div class="col-xs-12 carosel-col hidden-xs">
+    <div class="view-larger">
+      <a href="#" {{action "openLargeView"}} aria-role="link" aria-label="Opens image modal">
+        <i class="fa fa-search-plus fa-2x" aria-hidden="true"></i>
+        <span>{{appstr.viewLarger}}</span>
+      </a>
+    </div>
+  </div>
+{{/if}}
+
+<div class="col-xs-6 carosel-col">
+  {{#slick-carousel afterChange=(action "currentImage") as |slickoptions|}}
+    {{#each items as |item index|}}
+      <div class="slick-item">
+        <div>
+          <a href="#" {{action (pipe (action slickoptions.onclick index) (action "currentImage" index))}} aria-role="link" aria-label="Click to view this image">
+            <figure><img src={{item.image}} class="slick-img"/></figure>
+          </a>
+        </div>
+      </div>
+    {{/each}}
+  {{/slick-carousel}}
+</div>
+
+{{#if showlarger}}
+  {{#with (action "closeLargeView") as |toggle|}}
+    {{#bootstrap-modal close=(action toggle) closeOnOverlayClick=true}}
+      <div class="modal-body" aria-role="dialog" aria-label="View item image larger">
+        <button type="button" class="close" aria-label="Close" {{action toggle}}>
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <figure class="text-center">
+          <img src={{current.image}}/>
+        </figure>
+      </div>
+    {{/bootstrap-modal}}
+  {{/with}}
+{{/if}}

@@ -1,0 +1,17 @@
+@mixin gradiant-bg-image($color-stops...) {
+  background-image: linear-gradient($color-stops);
+  background-image: -webkit-linear-gradient($color-stops);
+  background-image: -ms-linear-gradient($color-stops);
+  background-image: -moz-linear-gradient($color-stops);
+  background-image: -o-linear-gradient($color-stops);
+}
+
+@mixin full-page() {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+}

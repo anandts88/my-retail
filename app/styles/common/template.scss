@@ -1,0 +1,37 @@
+.btn {
+  &.btn-dark {
+    color: $white-color;
+
+    &:hover {
+      color: $white-color;
+    }
+  }
+
+  &.btn-black {
+    background-color: $text-color;
+    @include gradiant-bg-image(#4e4e4e, #333, #060606);
+  }
+
+  &.btn-red {
+    background-color: $theme-color;
+    @include gradiant-bg-image(#ea0000, #c00, #a00000);
+  }
+
+  &.btn-small {
+    font-size: 0.75em;
+    background-color: $content-color;
+    color: $ligt-text-color;
+  }
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.liquid-target-container {
+  z-index: inherit;
+}

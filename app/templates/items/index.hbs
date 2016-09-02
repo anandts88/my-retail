@@ -1,0 +1,14 @@
+<section class="item-list">
+  <div class="row">
+    {{#each model as |item|}}
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <figure><img src={{item.primaryImages.firstObject.image}} class="img-responsive" alt={{item.title}}></figure>
+          <div class="caption">
+            <p>{{#link-to 'items.item' item.id}}{{item.title}}{{/link-to}}</p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

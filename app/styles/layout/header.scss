@@ -1,0 +1,16 @@
+header.navbar-default {
+  &.header {
+    background-color: $white-color;
+    border-radius: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar-header {
+    >.navbar-brand {
+
+      &.header-brand {
+        color: $theme-color;
+      }
+    }
+  }
+}

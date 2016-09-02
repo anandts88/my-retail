@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  &:before {
+    box-sizing: border-box;
+  }
+  &:after {
+    box-sizing: border-box;
+  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: 0;
+}
+
+button {
+  &:focus, &:active {
+    outline:0px !important;
+  }
+}
+
+html {
+  height: 100%;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+body {
+  height: 100%;
+  color: $text-color;
+  overflow-y: auto;
+  background-color: $white-color;
+
+  & > .ember-view {
+    height: 100%;
+  }
+}
+
+a {
+  color: $theme-color;
+  text-decoration: none;
+  font-size: $link-font-size;
+  cursor: pointer;
+  outline: 0;
+
+  &:hover, &:focus {
+    color: $theme-color;
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+  }
+}
+
+ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+
+  &.disc {
+    list-style-type: disc;
+  }
+
+  >li {
+    margin: 3px;
+  }
+}
