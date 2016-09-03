@@ -1,4 +1,14 @@
 /* jshint node: true */
+var contentSecurityPolicy = {
+  'default-src': ["'none'"],
+  'object-src': ["'self'"],
+  'script-src':  ["'self'", "'unsafe-inline'", "'unsafe-eval'", "about:"],
+  'font-src':    ["'self'"],
+  'connect-src': ["'self'"],
+  'img-src':     ["'self'", "target.scene7.com"],
+  'style-src':   ["'self'", "'unsafe-inline'"],
+  'media-src':   ["'self'"]
+};
 
 module.exports = function(environment) {
   var ENV = {
