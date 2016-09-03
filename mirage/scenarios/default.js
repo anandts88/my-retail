@@ -10,22 +10,12 @@ export default function(server) {
   server.create('item', { purchasingChannelCode: 0 });
   server.create('item', {
     purchasingChannelCode: 1,
-    offers: [
-      {
-        "OfferPrice": [
-          {
-            "currencyCode": "USD",
-            "formattedPriceValue": "$55.99",
-            "priceQualifier": "Online Price",
-            "priceValue": "55.99"
-          }
-        ]
-      }
-    ],
+    title: 'Ninja\u2122 Professional Blender with Single Serve Blending Cups - Only Online',
     promotions: undefined
   });
   server.create('item', {
     purchasingChannelCode: 2,
+    title: 'Ninja\u2122 Professional Blender with Single Serve Blending Cups - Only In Store',
     promotions: [
       {
         "Description": [

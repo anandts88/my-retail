@@ -137,18 +137,20 @@ export default Factory.extend({
    ];
  },
 
- offers: [
-   {
-     "OfferPrice": [
-       {
-         "currencyCode": "USD",
-         "formattedPriceValue": "$139.99",
-         "priceQualifier": "Online Price",
-         "priceValue": "13999"
-       }
-     ]
-   }
- ],
+ offers() {
+   return [
+     {
+       "OfferPrice": [
+         {
+           "currencyCode": "USD",
+           "formattedPriceValue": faker.commerce.price(139.99, 999.99, 2, '$'),
+           "priceQualifier": "Online Price",
+           "priceValue": faker.commerce.price(139.99, 999.99, 2)
+         }
+       ]
+     }
+   ];
+ },
  customerReview: [
   {
    "Con": [
