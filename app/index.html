@@ -3,9 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MyRetail</title>
+    <title>myRetail</title>
+
     <meta name="description" content="myRetail store">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+    <!-- Meta tags to prevent caching of index.html -->
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!--
+      Prefetch dns to reduce lantency time
+
+      https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
+    -->
+    <link rel="dns-prefetch" href="http://target.scene7.com" />
 
     {{content-for "head"}}
 
