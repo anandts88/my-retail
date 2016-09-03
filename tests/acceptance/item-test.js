@@ -111,7 +111,7 @@ test('test for quantity', function(assert) {
 
   andThen(() => {
     assert.ok(find('.quantity'));
-    click('.quantity a.fa-plus-circle')
+    click('.quantity a.fa-plus-circle');
   });
 
   andThen(() => {
