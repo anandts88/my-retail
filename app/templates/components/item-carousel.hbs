@@ -24,7 +24,7 @@
       <div class="slick-item">
         <div>
           <a href="#" {{action (pipe (action slickoptions.onclick index) (action "currentImage" index))}} aria-role="link" aria-label="Click to view this image">
-            <figure><img src={{item.image}} class="slick-img"/></figure>
+            <figure><img src={{item.image}} class="slick-img" aria-label={{concat "Product Image " (inc index)}}/></figure>
           </a>
         </div>
       </div>

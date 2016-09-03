@@ -47,12 +47,14 @@
     "ember-invoke-action": "1.4.0",
     "ember-load-initializers": "^0.5.1",
     "ember-lodash": "0.0.10",
+    "ember-page-title": "3.0.6",
     "ember-resolver": "^2.0.3",
     "ember-truth-helpers": "1.2.0",
     "liquid-fire": "0.24.1",
     "loader.js": "^4.0.1"
   },
   "dependencies": {
-    "bulma": "^0.1.2"
+    "bulma": "^0.1.2",
+    "ember-page-title": "^3.0.6"
   }
 }
