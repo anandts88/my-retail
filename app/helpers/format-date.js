@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import moment from 'moment';
 import _isString from 'lodash/lang/isString';
+import _isDate from 'lodash/lang/isDate';
 
 /**
   Format supplied javascript date object or moment object or string to the supplied to format
@@ -12,11 +13,14 @@ import _isString from 'lodash/lang/isString';
   @public
  */
 export function formatDate([value], { from, to='MMMM, DD YYYY' }) {
-  let date = moment(value);
-
+  let date = value;
   // If value is string then parse the date using `from` format
   if (_isString(value) && from) {
     date = moment(value, from);
+  } else if (_isString(value) && !from) {
+    date = moment(new Date(value));
+  } else if (_isDate(value)) {
+    date = moment(value);
   }
 
   // Format moment object with supplied to format.

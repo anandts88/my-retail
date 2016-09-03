@@ -15,6 +15,10 @@
     }
   }
 
+  .quantity-control {
+    @include no-selection;
+  }
+
   .btn-icon {
     color: $content-color;
   }
