@@ -7,7 +7,7 @@ const {
 export function initialize() {
 
   Component.reopen({
-    attributeBindings: ['role', 'aria-label']
+    attributeBindings: ['role', 'aria-label', 'aria-labelledby']
   });
 }
 

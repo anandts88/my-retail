@@ -1,7 +1,7 @@
 {{! Image section}}
 <section class="col-xs-12 carosel-col">
   <figure>
-    <img src={{current.image}} class="img-responsive"/>
+    <img src={{current.image}} class="img-responsive" aria-label="Product Image " />
   </figure>
 </section>
 
@@ -10,7 +10,7 @@
 {{#if viewlarger}}
   <div class="col-xs-12 carosel-col hidden-xs">
     <div class="view-larger">
-      <a href="#" {{action "openLargeView"}} aria-role="link" aria-label="Opens image modal">
+      <a href="#" {{action "openLargeView"}} aria-role="link" aria-label="Opens product image in larger view">
         <i class="fa fa-search-plus fa-2x" aria-hidden="true"></i>
         <span>{{appstr.viewLarger}}</span>
       </a>
