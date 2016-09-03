@@ -19,11 +19,6 @@ module.exports = function(environment) {
     }
   };
 
-  // Enable ember mirage in all environments
-  ENV['ember-cli-mirage'] = {
-    enabled: true
-  };
-
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -45,7 +40,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
   }
 
   return ENV;

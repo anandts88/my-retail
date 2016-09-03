@@ -6,10 +6,6 @@ var pickFiles = require('broccoli-static-compiler');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    'ember-cli-mirage': {
-      enabled: true
-    },
-
     'ember-font-awesome': {
       useScss: true,
       fontsOutput: '/assets/fonts'
