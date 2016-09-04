@@ -1,6 +1,6 @@
 import defaultTransition from 'bootstrap-modal/utils/default-transition';
 
-const options = { duration: 600 };
+const options = { duration: 350 };
 
 export default function() {
   this.transition(
