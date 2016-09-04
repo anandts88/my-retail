@@ -7,5 +7,6 @@ moduleFor('route:items', 'Unit | Route | items', {
 
 test('it exists', function(assert) {
   let route = this.subject();
+
   assert.ok(route);
 });

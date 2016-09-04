@@ -54,7 +54,8 @@ export default Component.extend({
       nextArrow: get(this, 'nextArrow'),
       centerMode: get(this, 'centerMode'),
       centerPadding: get(this, 'centerPadding')
-    }).on('afterChange', () => {
+    })
+    .on('afterChange', () => {
       invokeAction(this, 'afterChange', this.$().slick('slickCurrentSlide'));
     });
   },

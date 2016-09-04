@@ -12,8 +12,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{slick-carousel}}`);
 
-
-
   // Template block usage:
   this.render(hbs`
     {{#slick-carousel}}

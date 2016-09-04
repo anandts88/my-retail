@@ -12,8 +12,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{rating-star}}`);
 
-
-
   // Template block usage:
   this.render(hbs`
     {{#rating-star}}

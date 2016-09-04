@@ -1,7 +1,7 @@
 {{! Image section}}
 <section class="col-xs-12 carosel-col">
   <figure>
-    <img src={{current.image}} class="img-responsive" aria-label="Product Image " />
+    <img src={{current.image}} class="img-responsive" aria-label="Product Image " alt="Product Image" />
   </figure>
 </section>
 
@@ -19,12 +19,12 @@
 {{/if}}
 
 <div class="col-xs-6 carosel-col">
-  {{#slick-carousel afterChange=(action "currentImage") as |slickoptions|}}
+  {{#slick-carousel role="slider" afterChange=(action "currentImage") as |slickoptions|}}
     {{#each items as |item index|}}
       <div class="slick-item">
         <div>
           <a href="#" {{action (pipe (action slickoptions.onclick index) (action "currentImage" index))}} aria-role="link" aria-label="Click to view this image">
-            <figure><img src={{item.image}} class="slick-img" aria-label={{concat "Product Image " (inc index)}}/></figure>
+            <figure><img src={{item.image}} class="slick-img" aria-label={{concat "Product Image " (inc index)}} alt={{concat "Product Image " (inc index)}} /></figure>
           </a>
         </div>
       </div>
@@ -35,13 +35,13 @@
 {{#if showlarger}}
   {{#with (action "closeLargeView") as |toggle|}}
     {{#bootstrap-modal close=(action toggle) closeOnOverlayClick=true}}
-      <div class="modal-body" aria-role="dialog" aria-label="View item image larger">
+      <div class="modal-body" role="dialog" aria-label="Modal for product image in larger view">
         <button type="button" class="close" aria-label="Close" {{action toggle}}>
           <span aria-hidden="true">&times;</span>
         </button>
 
         <figure class="text-center">
-          <img src={{current.image}}/>
+          <img src={{current.image}} aria-label="Product Image " alt="Product Image"/>
         </figure>
       </div>
     {{/bootstrap-modal}}

@@ -1,21 +1,77 @@
+/* eslint-disable max-len */
+
 import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  upc() { return faker.finance.account(); },
-  applyCouponLink() { return faker.random.boolean(); },
-  buyable() { return faker.random.boolean(); },
-  catEntryId() { return faker.finance.account(); },
-  classId(i) { return String(i + 1); },
-  department(i) { return String(i + 1); },
-  eligibleFor() { return 'ADD_TO_CART'; },
-  inventoryCode() { return faker.random.number({ min: 0, max: 5}); },
-  inventoryStatus() { return 'Online'; },
-  itemId(i) { return i + 1; },
-  itemType() { return 'ItemBean'; },
-  manufacturerPartNumber(i) { return `BL${i+1}`; },
-  packageQuantity() { return faker.random.number({ min: 0, max: 10}); },
-  partNumber() { return faker.finance.account(); },
-  purchasingChannelCode() { return faker.random.number({ min: 0, max: 2}); },
+  upc() {
+    return faker.finance.account();
+  },
+
+  applyCouponLink() {
+    return faker.random.boolean();
+  },
+
+  buyable() {
+    return faker.random.boolean();
+  },
+
+  catEntryId() {
+    return faker.finance.account();
+  },
+
+  classId(count) {
+    return String(count + 1);
+  },
+
+  department(count) {
+    return String(count + 1);
+  },
+
+  eligibleFor() {
+    return 'ADD_TO_CART';
+  },
+
+  inventoryCode() {
+    return faker.random.number({
+      min: 0,
+      max: 5
+    });
+  },
+
+  inventoryStatus() {
+    return 'Online';
+  },
+
+  itemId(count) {
+    return count + 1;
+  },
+
+  itemType() {
+    return 'ItemBean';
+  },
+
+  manufacturerPartNumber(count) {
+    return `BL${count + 1}`;
+  },
+
+  packageQuantity() {
+    return faker.random.number({
+      min: 0,
+      max: 10
+    });
+  },
+
+  partNumber() {
+    return faker.finance.account();
+  },
+
+  purchasingChannelCode() {
+    return faker.random.number({
+      min: 0,
+      max: 2
+    });
+  },
+
   purchasingChannel() {
     const code = this.purchasingChannelCode;
     let channel = 'Sold ';
@@ -34,11 +90,22 @@ export default Factory.extend({
 
     return channel;
   },
+
   webClass: 'Small Appliances',
   shortDescription: 'For the first time EVER - you get the same professional performance power in the Single Serve as well as the XL 72 oz pitcher! The Ninja\u2122 Professional Blender with Single Serve Blending Cups allow you to crush ice into snow, blend whole fruits and vegetables into nutritious beverages, and create resort style blended drinks! Full size blender performance now in individual cups.',
-  callOutMsg() { return 'FREE $25 GIFT CARD'; },
-  manufacturer() { return 'Euro Pro'; },
-  title() { return 'Ninja\u2122 Professional Blender with Single Serve Blending Cups'; },
+
+  callOutMsg() {
+    return 'FREE $25 GIFT CARD';
+  },
+
+  manufacturer() {
+    return 'Euro Pro';
+  },
+
+  title() {
+    return 'Ninja\u2122 Professional Blender with Single Serve Blending Cups';
+  },
+
   images() {
     return [
      {

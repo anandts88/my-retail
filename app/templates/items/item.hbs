@@ -3,7 +3,7 @@
 <div class="item-detail">
   <div class="row">
     <section class="col-xs-12 col-sm-5 col-lg-5 left-section">
-      <h4 class="text-center item-title">{{item.title}}</h4>
+      <h4 class="text-center item-title" role="heading">{{item.title}}</h4>
 
       {{! Image Carosel row}}
       <div class="row text-center">
@@ -23,9 +23,9 @@
       <div class="row">
         <div class="col-xs-11 item-row no">
 
-          <div class="price">
-            <span >{{item.price.formattedPriceValue}}</span>
-            <small class="description">{{lower-case item.price.priceQualifier}}</small>
+          <div class="price" role="group">
+            <span>{{item.price.formattedPriceValue}}</span>
+            <small class="description" role="contentinfo">{{lower-case item.price.priceQualifier}}</small>
           </div>
 
         </div>

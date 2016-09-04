@@ -29,9 +29,16 @@ const {
   @public
 */
 export default Component.extend({
+  attributeBindings: ['title'],
+
   maximum: 5,
   rating: 0,
   sizeClass: 'fa-lg',
+  tabindex: -1,
+
+  title: computed('rating', function() {
+    return `${get(this, 'rating')} stars`;
+  }),
 
   stars: computed('maximum', 'rating', function() {
     const stars = Ember.A();
@@ -39,11 +46,11 @@ export default Component.extend({
     const rating = get(this, 'rating');
 
     // Loop until maximum number of stars
-    for (let i = 1; i <= maximum; i++) {
+    for (let count = 1; count <= maximum; count++) {
       // If current index is less than or equal to current rating,
       // then this star needs to be filled.
       // else this star will we greyed or not filled.
-      stars.pushObject({ fill: i <= rating });
+      stars.pushObject({ fill: count <= rating });
     }
 
     return stars;

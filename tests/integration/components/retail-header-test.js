@@ -12,8 +12,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{retail-header}}`);
 
-
-
   // Template block usage:
   this.render(hbs`
     {{#retail-header}}

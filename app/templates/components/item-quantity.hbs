@@ -1,7 +1,7 @@
 <div class="pull-left text">{{appstr.quantity}}:</div>
 
-<div class="pull-right quantity-control">
-  <a href="#" class="fa fa-minus-circle fa-2x btn-icon" aria-role="button" aria-label="Decrement quantity" {{action "decrement"}}></a>
+<div class="pull-right quantity-control" role="input">
+  <a href="#" class="fa fa-minus-circle fa-2x btn-icon" role="button" aria-label="Decrement quantity" {{action "decrement"}} />
   <output class="text value" aria-label="Number of quantity">{{quantity}}</output>
-  <a href="#" class="fa fa-plus-circle fa-2x btn-icon" aria-role="button" aria-label="Increment quantity"  {{action "increment"}}></a>
+  <a href="#" class="fa fa-plus-circle fa-2x btn-icon" role="button" aria-label="Increment quantity"  {{action "increment"}} />
 </div>

@@ -7,5 +7,6 @@ moduleFor('route:error-page', 'Unit | Route | exception', {
 
 test('it exists', function(assert) {
   let route = this.subject();
+
   assert.ok(route);
 });

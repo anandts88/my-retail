@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 /**
   Define display strings in here, rather hard coding them in
 

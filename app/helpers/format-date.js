@@ -14,6 +14,7 @@ import _isDate from 'lodash/lang/isDate';
  */
 export function formatDate([value], { from, to='MMMM, DD YYYY' }) {
   let date = value;
+
   // If value is string then parse the date using `from` format
   if (_isString(value) && from) {
     date = moment(value, from);

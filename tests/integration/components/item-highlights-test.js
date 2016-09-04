@@ -12,8 +12,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{item-highlights}}`);
 
-
-
   // Template block usage:
   this.render(hbs`
     {{#item-highlights}}

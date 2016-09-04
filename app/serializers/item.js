@@ -60,6 +60,7 @@ export default JSONAPISerializer.extend({
     items = CatalogEntryViews.map((item) => {
       _item = this.normalizeItem(item, type.modelName);
       _item.links = { self: `/items/${item.id}` };
+
       return _item;
     });
 
