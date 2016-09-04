@@ -1,7 +1,15 @@
 <div class="container-fluid">
-  <div class="navbar-header">
+  <div class="navbar-header pull-left">
     {{#link-to 'items' class="navbar-brand header-brand"}}
       {{appstr.applicationName}}
     {{/link-to}}
+  </div>
+  <div class="navbar-header pull-right right-content">
+    <a href="#" role="button" class="navbar-btn shopping-cart">
+      {{#if cart.size}}
+        <span class="no-items">{{cart.size}} {{if (gt cart.size 1) 'items' 'item'}}</span>
+      {{/if}}
+      <em href="#" class="fa fa-shopping-cart"></em>
+    </a>
   </div>
 </div>

@@ -1,19 +1,19 @@
-.item-list {
-  .item {
-    .item-image {
-      width: 50%;
-      height: 50%;
-      margin: 0 auto;
+div.item-detail {
+
+  .item-list {
+    .item {
+      .item-image {
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+      }
     }
   }
-}
-
-div.item-detail {
 
   .review-row {
 
     .overall-review-container {
-      padding: 15px 0;
+      padding: $padding-small 0;
 
       .overall-text {
         margin-left: 10px;
@@ -22,7 +22,7 @@ div.item-detail {
 
     .review-table-container {
       background: $table-color;
-      padding: 10px 10px 0;
+      padding: $padding-small $padding-small 0;
       font-size: 1em;
 
       .table {
@@ -30,7 +30,7 @@ div.item-detail {
       }
 
       .review-title {
-        font-size: 1.15em;
+        @include size-of-font(1.15em);
       }
 
       .posted-by {
@@ -47,70 +47,67 @@ div.item-detail {
     }
   }
 
-  section.left-section {
-    padding: 0 35px;
+  .item-section {
+    padding: 0 $padding-medium;
 
-    .item-title {
-      margin-top: 0;
-      font-weight: 200;
+    &.left-section {
+
+      .item-title {
+        margin-top: 0;
+        font-weight: $font-weight-200;
+      }
+
     }
-  }
 
-  section.right-section {
-    padding: 0 35px;
+    &.right-section {
 
-    .item-row {
-      padding: 10px 0;
+      .item-row {
+        padding: $padding-small 0;
 
-      &.large {
-        padding-top: 30px;
-      }
-
-      &.no {
-        padding-top: 0;
-      }
-
-      &.border {
-        border-top: 1px solid $content-color;
-      }
-
-      .price {
-        font-size: 1.5em;
-        font-weight: 800;
-
-        >.description {
-          font-size: 0.5em;
-          font-weight: 200;
-        }
-      }
-
-      ul.promotions {
-        color: $theme-color;
-      }
-
-      .btn-row {
-
-        .stretch {
-          padding: 0;
-          padding-right: 2px;
+        &.with-border {
+          border-top: $border-1;
         }
 
-        .btn-dark {
-          margin-right: 5px;
-        }
-      }
-
-      .return-row {
-        .title {
-          font-size: 1.25em;
+        &.with-padding-top {
+          padding-top: $padding-medium;
         }
 
-        .info {
-          font-size: 0.75em;
-          border-left: 2px solid $content-color;
-          padding-left: 10px;
+        &.without-padding-top {
+          padding-top: 0;
         }
+
+        >.price {
+          @include size-of-font(1.5em, $font-weight-800);
+
+          >.description {
+            @include size-of-font(0.5em, $font-weight-200);
+          }
+        }
+
+        ul.promotions {
+          color: $theme-color;
+        }
+
+        .btn-row {
+          >.stretch {
+            padding: 0 $padding-small 0 0;
+          }
+        }
+
+        .return-row {
+          .title {
+            @include size-of-font(1.25em);
+          }
+
+          .info {
+            @include size-of-font(0.75em);
+            border-left: $border-2;
+            padding-left: $padding-small;
+          }
+        }
+
       }
+
     }
   }
 }

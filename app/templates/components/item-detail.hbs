@@ -1,0 +1,122 @@
+<div class="row">
+
+  <section class="col-xs-12 col-sm-5 col-lg-5 item-section left-section">
+    <h4 class="text-center item-title" role="heading">{{item.title}}</h4>
+
+    {{! Image Carosel row}}
+    <div class="row text-center">
+      {{item-carousel items=item.allImages}}
+    </div>
+
+    {{! Reviews Row for desktop and tablet}}
+    <div class="row hidden-xs">
+      <div class="col-xs-12">
+        {{item-reviews review=item.review}}
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="col-xs-12 col-sm-7 col-lg-7 item-section right-section">
+
+    <div class="row">
+      <div class="col-xs-11 item-row without-padding-top">
+
+        <div class="price" role="group">
+          <span>{{item.price.formattedPriceValue}}</span>
+          <small class="description" role="contentinfo">{{lower-case item.price.priceQualifier}}</small>
+        </div>
+
+      </div>
+    </div>
+
+    {{! Promotions row}}
+    {{#if item.eligiblePromotions}}
+      <div class="row">
+        <div class="col-xs-11 item-row with-border">
+
+          {{item-promotions promotions=item.eligiblePromotions}}
+
+        </div>
+      </div>
+    {{/if}}
+
+    {{! Increase or decrease item quantity}}
+    <div class="row">
+      <div class="col-xs-11 item-row with-border with-padding-top">
+
+        {{item-quantity class="col-xs-9 col-md-4" onchange=(action "setQuantity")}}
+
+      </div>
+    </div>
+
+    {{! Pick up in store or Add to cart button row}}
+    <div class="row">
+      <div class="col-xs-12 item-row">
+
+        <div class="btn-row">
+
+          {{! Show Pick up in store button only if channel code is 0 or 2}}
+          {{#if (or (eq item.purchasingChannelCode 0) (eq item.purchasingChannelCode 2))}}
+            <div class="col-xs-6 stretch">
+              <button type="button" class="btn col-xs-12 btn-dark btn-black pick-in-store" {{action "addToCart" false}}>
+                {{appstr.pickUpInStore}}
+              </button>
+              <small class="col-xs-12 text-center">{{appstr.findInStore}}</small>
+            </div>
+          {{/if}}
+
+          {{! Show Add to cart button only if channel code is 0 or 1}}
+          {{#if (or (eq item.purchasingChannelCode 0) (eq item.purchasingChannelCode 1))}}
+            <div class="col-xs-6 stretch">
+              <button type="button" class="btn col-xs-12 btn-dark btn-red add-to-cart" {{action "addToCart"}}>
+                {{appstr.addToCart}}
+              </button>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+    {{! Return policy row}}
+    <article class="row">
+      <div class="col-xs-12 item-row">
+        {{item-return-policy}}
+      </div>
+    </article>
+
+    {{! Other buttons row}}
+    <div class="row">
+      <div class="col-xs-12 item-row">
+
+        <div class="btn-row">
+          <div class="col-xs-4 stretch">
+            <button type="button" class="btn col-xs-12 btn-sm btn-small">{{appstr.addToRegistry}}</button>
+          </div>
+          <div class="col-xs-4 stretch">
+            <button type="button" class="btn col-xs-12 btn-sm btn-small">{{appstr.addToList}}</button>
+          </div>
+          <div class="col-xs-4 stretch">
+            <button type="button" class="btn col-xs-12 btn-sm btn-small">{{appstr.share}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{! Item Descriptions row}}
+    <article class="row">
+      <div class="col-xs-12 item-row">
+        {{item-highlights features=item.itemDescription}}
+      </div>
+    </article>
+
+  </section>
+</div>
+
+{{! Reviews Row for mobile}}
+<div class="row visible-xs">
+  <div class="col-xs-12">
+    {{item-reviews review=item.review}}
+  </div>
+</div>

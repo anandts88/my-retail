@@ -18,20 +18,31 @@
   }
 
   &.btn-small {
-    font-size: 0.75em;
+    @include size-of-font(0.75em);
     background-color: $content-color;
     color: $ligt-text-color;
   }
 }
 
 .bold {
-  font-weight: 900;
+  font-weight: $font-weight-bold;
 }
 
 .light {
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }
 
 .liquid-target-container {
   z-index: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  left: 0.1;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }

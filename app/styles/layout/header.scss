@@ -12,5 +12,17 @@ header.navbar-default {
         color: $theme-color;
       }
     }
+
+    &.right-content {
+      margin-right: 5px;
+
+      .shopping-cart {
+        @include size-of-font(2em);
+
+        .no-items {
+          @include size-of-font(0.5em);
+        }
+      }
+    }
   }
 }

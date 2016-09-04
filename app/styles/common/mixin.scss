@@ -22,3 +22,17 @@
   -khtml-user-select: none;
   -ms-user-select: none;
 }
+
+@mixin link-no-style($color) {
+  color: $color;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+}
+
+@mixin size-of-font($size, $weight:"") {
+  font-size: $size;
+  @if $weight != "" {
+    font-weight: $weight;
+  }
+}

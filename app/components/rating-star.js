@@ -34,7 +34,6 @@ export default Component.extend({
   maximum: 5,
   rating: 0,
   sizeClass: 'fa-lg',
-  tabindex: -1,
 
   title: computed('rating', function() {
     return `${get(this, 'rating')} stars`;

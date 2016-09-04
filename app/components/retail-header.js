@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 const {
-  Component
+  Component,
+  inject: { service }
 } = Ember;
 
 /**
@@ -12,6 +13,8 @@ const {
   @public
 */
 export default Component.extend({
+  cart: service('shopping-cart'),
+
   tagName: 'header',
   ariaRole: 'banner'
 });

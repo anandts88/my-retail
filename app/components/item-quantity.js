@@ -54,7 +54,7 @@ export default Component.extend({
       if (!get(this, 'reachedMax')) {
         this.incrementProperty('quantity');
 
-        invokeAction(this, 'onchange');
+        invokeAction(this, 'onchange', get(this, 'quantity'));
       }
     },
 
@@ -69,7 +69,7 @@ export default Component.extend({
       if (!get(this, 'reachedMin')) {
         this.decrementProperty('quantity');
 
-        invokeAction(this, 'onchange');
+        invokeAction(this, 'onchange', get(this, 'quantity'));
       }
     }
   }

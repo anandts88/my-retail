@@ -10,7 +10,7 @@
 
       &.slick-current {
         div {
-          border: 1px solid $content-color;
+          border: $border-1;
           border-radius: 4px;
         }
       }
