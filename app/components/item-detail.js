@@ -17,7 +17,7 @@ export default Component.extend({
       const item = get(this, 'item');
       const quantity = get(this, 'quantity');
 
-      get(this, 'cart').add(item, quantity, online);      
+      get(this, 'cart').add(item, quantity, online);
     },
 
     setQuantity(quantity) {

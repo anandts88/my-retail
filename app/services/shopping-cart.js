@@ -4,7 +4,6 @@ const {
   Service,
   set,
   get,
-  run: { on },
   isEmpty,
   computed
 } = Ember;
