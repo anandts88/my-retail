@@ -115,12 +115,12 @@ test('test for quantity', function(assert) {
   });
 
   andThen(() => {
-    assert.equal(find('.quantity output').text(), 2);
+    assert.equal(find('.quantity label > .total').text(), 2);
     click('.quantity a.fa-minus-circle');
   });
 
   andThen(() => {
-    assert.equal(find('.quantity output').text(), 1);
+    assert.equal(find('.quantity label > .total').text(), 1);
   });
 
 });
