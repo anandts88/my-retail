@@ -5,7 +5,7 @@ import Ember from 'ember';
 
   @param {String} - Value String that needs to be ellipsized.
   @param {Integer} - Number of visible charcters
-  @returns {String} - Ellipsized string.
+  @returns Ellipsized string.
   @public
  */
 export function textEllipsize([value], { chars=60 }) {
