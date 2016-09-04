@@ -14,7 +14,14 @@
               sizeClass="small"
               class="pull-right"}}
             <h4 aria-label="Item Price">{{item.price.formattedPriceValue}}</h4>
-            <p>{{#link-to 'items.item' item.id}}{{item.title}}{{/link-to}}</p>
+            <p aria-hidden="true">
+              {{#link-to 'items.item' item.id}}
+                {{text-ellipsize item.title}}
+              {{/link-to}}
+            </p>
+            <p class="sr-only sr-only-focusable">
+              {{item.title}}
+            </p>
           </div>
         </div>
       </div>
